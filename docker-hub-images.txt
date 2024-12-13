@@ -1,0 +1,2 @@
+inventory-service   : https://hub.docker.com/repository/docker/vinayk101/inventory-service/general
+order-service       : https://hub.docker.com/repository/docker/vinayk101/order-service/general

@@ -27,3 +27,4 @@ docker ps -a
 docker images
 docker rm <image-id>
 
+docker logs -f <c>

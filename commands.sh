@@ -1,6 +1,6 @@
 # Build Inventory and Order service images.
-docker built -t inventory-service:v1 inventory-service .
-docker built -t order-service:v1 order-service .
+docker build -t inventory-service:v1 ./inventory-service
+docker build -t order-service:v1 ./order-service
 
 # Docker login
 docker login
@@ -28,3 +28,4 @@ docker images
 docker rm <image-id>
 
 docker logs -f <c>
+

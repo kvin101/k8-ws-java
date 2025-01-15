@@ -1,15 +1,16 @@
 # Build Inventory and Order service images.
 docker build -t inventory-service:v1 ./inventory-service
-docker build -t order-service:v1 ./order-service
+docker build -t order-service:v2 ./order-service
 
 # Docker login
 docker login
 
 # Tag image and push to docker hub
 docker tag inventory-service:v1 vinayk101/inventory-service:v1
-docker push vinayk101/order-service:v1
-docker tag order-service:v1 vinayk101/order-service:v1
 docker push vinayk101/inventory-service:v1
+
+docker tag order-service:v2 vinayk101/order-service:v2
+docker push vinayk101/order-service:v2
 
 # Create a network
 docker network create internal-network

@@ -11,7 +11,7 @@ services:
      - internal_network
 
  order:
-   image: vinayk101/order-service:v1
+   image: vinayk101/order-service:v2
    container_name: order_service
    ports:
      - "8080:8080"

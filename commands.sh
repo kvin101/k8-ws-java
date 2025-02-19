@@ -1,3 +1,13 @@
+# Common
+# Install brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# Install k9s
+brew install k9s
+# Install sdkman
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk version
+
 # Docker Commands
 # Build Inventory and Order service images.
 docker build -t inventory-service:v1 ./inventory-service
@@ -48,10 +58,15 @@ kubectl describe pod my-pod
 kubectl get all
 kubectl logs pod/my-pod
 kubectl apply -f temp.yaml
+kubectl apply -f .
 
 kubectl port-forward svc/nginx-nodeport-service 8080:80
-# svc   - service
-# ns    - namespace
+# svc       - service
+# ns        - namespace
+# deploy    - deployment
+# cm        - configmap
+# pv        - persistent volume
+# pvc       - persistent volume claim
 # default, kube-node-release, kube-public, kube-system
 
 # Create namespace
@@ -62,4 +77,14 @@ kubectl get ns
 # Get pods in the 'dev' namespace
 kubectl get pods -n dev
 kubectl get all -n dev
+
+# Create deployment
+kubectl create deployment nginx-deploy --image=nginx:alpine
+kubectl create statefulset nginx-deploy --image=nginx:alpine
+
+kubectl get configmap -n dev
+kubectl create configmap app-config --from-literal=env=production
+
+kubectl get secrets -n dev
+kubectl get secret -o yaml mysql-secret
 

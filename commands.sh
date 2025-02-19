@@ -1,3 +1,4 @@
+# Docker Commands
 # Build Inventory and Order service images.
 docker build -t inventory-service:v1 ./inventory-service
 docker build -t order-service:v2 ./order-service
@@ -29,4 +30,36 @@ docker images
 docker rm <image-id>
 
 docker logs -f <c>
+
+
+# Kubernetes commands
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+chmod +x minikube
+sudo mv minikube /usr/local/bin/
+minikube version
+minikube start --driver=docker
+minikube status
+kubectl get nodes
+ 
+kubectl run my-pod --image=nginx
+kubectl label pod my-pod app=nginx
+kubectl get pods
+kubectl describe pod my-pod
+kubectl get all
+kubectl logs pod/my-pod
+kubectl apply -f temp.yaml
+
+kubectl port-forward svc/nginx-nodeport-service 8080:80
+# svc   - service
+# ns    - namespace
+# default, kube-node-release, kube-public, kube-system
+
+# Create namespace
+kubectl create ns dev
+kubectl create namespace dev
+# Get namespaces
+kubectl get ns
+# Get pods in the 'dev' namespace
+kubectl get pods -n dev
+kubectl get all -n dev
 

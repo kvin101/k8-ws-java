@@ -33,7 +33,8 @@ This application simulates the process of ordering coffee. The **Order Service**
     "coffeeType": "cappuccino",
     "quantity": 1,
     "status": "Confirmed"
-  }```
+  }
+  ```
 
 ---
 

@@ -88,3 +88,12 @@ kubectl create configmap app-config --from-literal=env=production
 kubectl get secrets -n dev
 kubectl get secret -o yaml mysql-secret
 
+# Get persistent volume
+kubectl get pv
+# Get persistent volume claim
+kubectl get pvc
+
+# Helm
+Helm list -n dev
+Helm install helm-chart -n dev
+Helm template helm-chart -n dev

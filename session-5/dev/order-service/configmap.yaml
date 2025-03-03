@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inventory-config
+  namespace: dev
+data:
+  INVENTORY_URL: "https://glorious-space-guide-q4jvwqp7jqfrq7-30001.app.github.dev "

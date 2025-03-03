@@ -33,8 +33,7 @@ This application simulates the process of ordering coffee. The **Order Service**
     "coffeeType": "cappuccino",
     "quantity": 1,
     "status": "Confirmed"
-  }
-   ```
+  }```
 
 ---
 
@@ -69,8 +68,7 @@ This application simulates the process of ordering coffee. The **Order Service**
       "name": "Milk Foam",
       "quantity": 500
     }
-  }
-   ```
+  }```
 
    **Example Request (POST /inventory/used):**
    ```json

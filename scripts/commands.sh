@@ -97,3 +97,25 @@ kubectl get pvc
 Helm list -n dev
 Helm install helm-chart -n dev
 Helm template helm-chart -n dev
+
+kubectl port-forward svc/inventory-service 8082:8082 -n dev
+kubectl port-forward svc/order-service 8080:8080 -n dev
+
+# Inventory service
+k delete -f dev/inventory-service/.
+k delete -f stage/inventory-service/.
+k delete -f prod/inventory-service/.
+# ---
+k apply -f dev/inventory-service/.
+k apply -f stage/inventory-service/.
+k apply -f prod/inventory-service/.
+
+# Order service
+k delete -f dev/order-service/.
+k delete -f stage/order-service/.
+k delete -f prod/order-service/.
+# ---
+k apply -f dev/order-service/.
+k apply -f stage/order-service/.
+k apply -f prod/order-service/.
+
